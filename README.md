@@ -3,9 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Amazon_Backup extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 */
 	public function __construct(){
 		parent::__construct();
 		error_reporting(E_ALL);
@@ -18,7 +15,7 @@ class Amazon_Backup extends CI_Controller {
 		}
 
 
-/* Function for creating the backup of Project and both the database */
+ Function for creating the backup of Project and both the database */
 	public function create_backup()
 	{
 	
@@ -93,9 +90,7 @@ class Amazon_Backup extends CI_Controller {
                     $zip->addFromString(basename($source), file_get_contents($source));
                 }
             }
-            //chmod($source, 0755);
-            //echo "<pre>";
-            //print_r($zip);
+          
             return $zip->close();
         }
     }
@@ -145,10 +140,3 @@ public static function inputFile($file, $md5sum = true)
                         base64_encode(md5_file($file, true))) : '');
 }
 
-function mailfun(){
-	echo 'ail'. mail('dilip@itexpertsindya.com','hello', 'asdfasdfasdf');
-}
-
-
-
-}
